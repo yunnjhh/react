@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const useInput = (initialValue, validator) => {
     const [value, setValue] = useState(initialValue);
@@ -10,8 +10,7 @@ const useInput = (initialValue, validator) => {
         } = event; 
 
         let willUpdate = true;
-        if (typeof validator === "function") {
-            console.log('function');
+        if (typeof validator === "function") { 
             willUpdate = validator(value);
         } 
         if (willUpdate) {
