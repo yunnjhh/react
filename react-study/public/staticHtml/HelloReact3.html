@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Project</title>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/javascript">
+        ReactDOM.render(
+            React.createElement(
+                'div', { "style" : { "border" : "1px solid blue" } }, 
+                 React.createElement('h1', { "style" : { "color" : "red"}}, `Hello! 중첩!1`),
+                 React.createElement('h2', { "style" : { "color" : "red"}}, `Hello! 중첩!2`),
+                 React.createElement('h3', { "style" : { "color" : "red"}}, `Hello! 중첩!3`),
+                 React.createElement('h4', { "style" : { "color" : "red"}}, `Hello! 중첩!4`),
+            ), 
+            document.getElementById("root")
+        );   
+    </script>
+</body>
+</html>
