@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>상태관리</title>
+    <title>컬렉션 형태의 데이터 출력</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
@@ -74,20 +74,34 @@
                         </div>
                         <h3>{this.state.theme}</h3>
                         <div>{this.state.theme === "white" ? "white theme" : "other theme"} </div>
+                        <h3>{this.props.sortOrder}</h3>
+
+                        { 
+                            this.props.book.map( b => {
+                                return <BookCard key={b.id} title = {b.title} desc = { b.description } price = { b.price } />
+                            }) 
+                        }
+
+                        <hr/>
+
                         <BookCard title="제목1" desc="설명1" price={ 300 } />
                         <BookCard title={item.title} desc={item.description} price="200" />
-                        <h3>{this.props.sortOrder}</h3>
                     </>
                 );
             }
         }
-         
+        
+        const books = [
+            { id: 1, title: "AA", description: "설명~AAA", price: 3000 }, 
+            { id: 2, title: "BB", description: "설명~BBB", price: 3000 }, 
+        ];
+
         class BookApp extends React.Component {
             render() {
                 return (
                     <>
                         <BookTitle />
-                        <BookList sortOrder = "ASC" />    
+                        <BookList sortOrder = "ASC" book = { books } />    
                     </>
                 );
             }
