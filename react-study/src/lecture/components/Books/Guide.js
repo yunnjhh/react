@@ -1,6 +1,6 @@
 import React from 'react';
 import GuideTitle from './GuideTitle';
-import '../../../App.css';
+import '../../LectureApp.css';
 
 function Guide() {
     return (
